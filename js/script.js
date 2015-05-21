@@ -42,7 +42,11 @@ function loadData() {
         '</a>'+
         '<p>' + article.snippet +'</p>'+
         '</li>');
-      };
+      }
+
+    }).error(function(e)
+    {
+      $nytHeaderElem.text('New York Times Article Could not be loaded');
     });
 
 
@@ -66,7 +70,9 @@ function loadData() {
             var url = 'http://en.wikipedia.org/wiki/' + articleStr;
             $wikiElem.append('<li><a href="' + url + '">' + articleStr + '</a></li>');
           };
+          clearTimeout(wikiRequestTimeout);
         }
+
       });
 
 
