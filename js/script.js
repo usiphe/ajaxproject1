@@ -31,7 +31,7 @@ function loadData() {
   '&sort=newest&api-key=09732fe0242cb9fface670293025c8bb:17:72112139';
     $.getJSON(nytimesUrl, function(data)
     {
-      $nytHeaderElem.text('New York Times Article About' + cityStr);
+      $nytHeaderElem.text('New York Times Article About ' + cityStr);
 
       articles = data.response.docs;
       for(var i = 0; i < articles.length; i++)
@@ -75,6 +75,7 @@ function loadData() {
 
       });
 
+    
 
 
 
@@ -82,3 +83,11 @@ function loadData() {
 };
 
 $('#form-container').submit(loadData);
+$('#name').keyup(function()
+{
+  var name = $('#name').val();
+  $.post('newfile/process_name.html', {name: name},function(data){
+    $('#name_feedback').html(data);
+
+  });
+});
