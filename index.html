@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <title>Your Moving Companion</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/libs/jquery.min.js"></script>
+
+    <script>
+    $(document).ready(function()
+    {
+      $(".article-list").click(function()
+      {
+        $(this).hide();
+      });
+    });
+    </script>
 </head>
 <body>
 
@@ -29,7 +40,8 @@
         <ul id="nytimes-articles" class="article-list">What's going on in your new city? Enter an address and hit submit and the NY Times will tell you here!</ul>
     </div>
 
-    <script src="js/libs/jquery.min.js"></script>
+
     <script src="js/script.js"></script>
+
 </body>
 </html>
