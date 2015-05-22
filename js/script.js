@@ -75,19 +75,7 @@ function loadData() {
 
       });
 
-    
-
-
-
     return false;
 };
 
 $('#form-container').submit(loadData);
-$('#name').keyup(function()
-{
-  var name = $('#name').val();
-  $.post('newfile/process_name.html', {name: name},function(data){
-    $('#name_feedback').html(data);
-
-  });
-});
